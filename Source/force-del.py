@@ -18,6 +18,11 @@ if os.path.isdir(dir_path):  # attempts to kill tasks and delete folders
         for x in files:
             subprocess.Popen(f'taskkill /F /IM "{x}"', shell=True)
             subprocess.Popen(f'DEL /F /Q /S "{os.path.join(root, x)}" > NUL', shell=True)
+
+    for root, dirs, _ in os.walk(dir_path):  # attempts to clear internal folders
+        for y in dirs:
+            subprocess.Popen(f'DEL /F /Q /S "{os.path.join(dir_path)}" > NUL', shell=True)
+
 else:
     subprocess.Popen(f'taskkill /F /IM "{ntpath.basename(dir_path)}"', shell=True)
 
