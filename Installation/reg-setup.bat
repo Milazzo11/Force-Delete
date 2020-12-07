@@ -1,6 +1,5 @@
 @echo off
 
-"\"C:\Program Files\Java\jre7\bin\javaw.exe\" -jar \"%1\" %*"
 
 REG ADD "HKCR\*\shell\Force Delete (Advanced)" /v Icon /t REG_SZ /d "C:\Program Files\JMP-Manager\Force-Delete-ADV\force-del.exe"
 REG ADD "HKCR\*\shell\Force Delete (Advanced)\command" /ve /t REG_SZ /d "\"C:\Program Files\JMP-Manager\Force-Delete-ADV\force-del.exe\" \"%1\""
